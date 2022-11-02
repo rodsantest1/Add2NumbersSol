@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add2NumbersService", "Add2N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add2NumbersTestProject1", "Add2NumbersTestProject1\Add2NumbersTestProject1.csproj", "{6C586B46-90B4-47AD-8DAD-4F712EBA0D92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Add2NumbersViewModels", "Add2NumbersViewModels\Add2NumbersViewModels.csproj", "{69FD55A3-E395-4FE9-A74D-6300E957240D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6C586B46-90B4-47AD-8DAD-4F712EBA0D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C586B46-90B4-47AD-8DAD-4F712EBA0D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C586B46-90B4-47AD-8DAD-4F712EBA0D92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FD55A3-E395-4FE9-A74D-6300E957240D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FD55A3-E395-4FE9-A74D-6300E957240D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FD55A3-E395-4FE9-A74D-6300E957240D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FD55A3-E395-4FE9-A74D-6300E957240D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
