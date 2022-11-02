@@ -1,12 +1,37 @@
-﻿<Window x:Class="Add2NumbersWpfApp1.MainWindow"
+﻿<reactiveui:ReactiveWindow 
+        x:Class="Add2NumbersWpfApp1.MainWindow"
+        x:TypeArguments="Add2NumbersViewModels:MainWindowViewModel"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Add2NumbersWpfApp1"
+        xmlns:reactiveui="http://reactiveui.net" 
+        xmlns:local="clr-namespace:Add2NumbersWpfApp1"    
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="StackPanel1" Orientation="Horizontal" Margin="0 20 0 20">
+            <TextBox x:Name="Input1" Width="90" Margin="20 0 0 0" TextAlignment="Center"/>
+            <TextBlock Text="+" VerticalAlignment="Center" Margin="20 0 0 0" />
+            <TextBox x:Name="Input2" Width="90" Margin="20 0 0 0" TextAlignment="Center"/>
+            <TextBlock Text="=" VerticalAlignment="Center" Margin="20 0 0 0" />
+            <TextBox x:Name="Sum" Width="90" Margin="20 0 0 0" IsReadOnly="True" TextAlignment="Center"/>
+            <TextBlock x:Name="BusyTextBlock" Text="Busy..." Visibility="Hidden"  Margin="20 0 0 0" VerticalAlignment="Center"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel2" Grid.Row="2" Margin="0 20 0 20">
+            <ListBox x:Name="ListBox1" BorderThickness="1" Padding="5" Width="300">
+                <ListBoxItem x:Name="ListBoxItem2" BorderThickness="1" Padding="5">
+                    <TextBlock x:Name="TextBlock1" Text="Hello World" />
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
     </Grid>
-</Window>
+</reactiveui:ReactiveWindow> 

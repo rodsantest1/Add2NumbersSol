@@ -2,17 +2,12 @@
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
-using System;
-using System.Configuration;
-using System.Net;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Add2NumbersViewModels
 {
-    internal class MainWindowViewModel : ReactiveObject
+    public class MainWindowViewModel : ReactiveObject
     {
         public bool ShowBusy { [ObservableAsProperty] get; }
         public ReactiveCommand<Unit, string> AddNumbers { get; }
