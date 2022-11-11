@@ -10,4 +10,8 @@
     <PackageReference Include="ReactiveUI.Blazor" Version="17.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Add2NumbersViewModels\Add2NumbersViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
