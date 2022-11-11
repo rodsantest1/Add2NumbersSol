@@ -17,36 +17,17 @@
 =
 @ViewModel.Sum
 
+@if (ViewModel.ShowBusy)
+{
+    <em>Computing...</em>
+}
+
 
 @code {
-    //string number1;
-    //string number2;
-    //string sum;
 
     protected override Task OnInitializedAsync()
     {
         ViewModel = new MainWindowViewModel();
-
-        //this.WhenActivated(disposables =>
-        //{
-        //    //this.OneWayBind(ViewModel,
-        //    //    vm => vm.ShowBusy,
-        //    //    v => v.BusyTextBlock.Visibility)
-        //    //    .DisposeWith(disposables);
-
-        //    this.Bind(ViewModel,
-        //        vm => vm.Input1,
-        //        v => v.name)
-        //        .DisposeWith(disposables);
-        //    this.Bind(ViewModel,
-        //        vm => vm.Input2,
-        //        v => v.number2)
-        //        .DisposeWith(disposables);
-        //    this.OneWayBind(ViewModel,
-        //        vm => vm.Sum,
-        //        v => v.sum)
-        //        .DisposeWith(disposables);
-        //});
 
         return base.OnInitializedAsync();
     }
