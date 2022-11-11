@@ -11,43 +11,42 @@
 @inherits ReactiveComponentBase<MainWindowViewModel>
 
 <h1>Add 2 Numbers View</h1>
-
-<input @bind="number1" />
+<input @bind-value="ViewModel.Input1" />
 +
-<input @bind="number2" />
+<input @bind-value="ViewModel.Input2" />
 =
-@sum
+@ViewModel.Sum
 
 
 @code {
-    string number1;
-    string number2;
-    string sum;
+    //string number1;
+    //string number2;
+    //string sum;
 
     protected override Task OnInitializedAsync()
     {
         ViewModel = new MainWindowViewModel();
 
-        this.WhenActivated(disposables =>
-        {
-            //this.OneWayBind(ViewModel,
-            //    vm => vm.ShowBusy,
-            //    v => v.BusyTextBlock.Visibility)
-            //    .DisposeWith(disposables);
+        //this.WhenActivated(disposables =>
+        //{
+        //    //this.OneWayBind(ViewModel,
+        //    //    vm => vm.ShowBusy,
+        //    //    v => v.BusyTextBlock.Visibility)
+        //    //    .DisposeWith(disposables);
 
-            this.Bind(ViewModel,
-                vm => vm.Input1,
-                v => v.number1)
-                .DisposeWith(disposables);
-            this.Bind(ViewModel,
-                vm => vm.Input2,
-                v => v.number2)
-                .DisposeWith(disposables);
-            this.OneWayBind(ViewModel,
-                vm => vm.Sum,
-                v => v.sum)
-                .DisposeWith(disposables);
-        });
+        //    this.Bind(ViewModel,
+        //        vm => vm.Input1,
+        //        v => v.name)
+        //        .DisposeWith(disposables);
+        //    this.Bind(ViewModel,
+        //        vm => vm.Input2,
+        //        v => v.number2)
+        //        .DisposeWith(disposables);
+        //    this.OneWayBind(ViewModel,
+        //        vm => vm.Sum,
+        //        v => v.sum)
+        //        .DisposeWith(disposables);
+        //});
 
         return base.OnInitializedAsync();
     }

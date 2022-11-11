@@ -23,7 +23,10 @@ namespace Add2NumbersViewModels
             this.WhenAnyValue(x => x.Input1, x => x.Input2,
                 (a, b) => !string.IsNullOrEmpty(a) && !string.IsNullOrEmpty(b))
                 .Where(x => x)
-                .Do(_ => this.Log().Debug($"Rodney-Input1={Input1}"))
+                .Do(_ =>
+                {
+                    this.Log().Debug($"Rodney-Input1={Input1}");
+                })
                 .Select(_ => Unit.Default)
                 .InvokeCommand(AddNumbers);
         }
