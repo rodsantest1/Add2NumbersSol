@@ -1,0 +1,34 @@
+﻿@page "/add2numbersview"
+
+@using System.Reactive.Threading.Tasks;
+@using System.Threading.Tasks;
+@using ReactiveUI.Blazor;
+@using Add2NumbersViewModels;
+@using ReactiveUI;
+@using System.Reactive.Disposables;
+
+
+@inherits ReactiveComponentBase<MainWindowViewModel>
+
+<h1>Add 2 Numbers View</h1>
+<input @bind-value="ViewModel.Input1" />
++
+<input @bind-value="ViewModel.Input2" />
+=
+@ViewModel.Sum
+
+@if (ViewModel.ShowBusy)
+{
+    <em>Computing...</em>
+}
+
+
+@code {
+
+    protected override Task OnInitializedAsync()
+    {
+        ViewModel = new MainWindowViewModel();
+
+        return base.OnInitializedAsync();
+    }
+}

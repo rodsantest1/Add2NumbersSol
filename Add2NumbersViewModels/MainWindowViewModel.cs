@@ -2,17 +2,12 @@
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Splat;
-using System;
-using System.Configuration;
-using System.Net;
 using System.Reactive;
 using System.Reactive.Linq;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Add2NumbersViewModels
 {
-    internal class MainWindowViewModel : ReactiveObject
+    public class MainWindowViewModel : ReactiveObject
     {
         public bool ShowBusy { [ObservableAsProperty] get; }
         public ReactiveCommand<Unit, string> AddNumbers { get; }
@@ -28,7 +23,10 @@ namespace Add2NumbersViewModels
             this.WhenAnyValue(x => x.Input1, x => x.Input2,
                 (a, b) => !string.IsNullOrEmpty(a) && !string.IsNullOrEmpty(b))
                 .Where(x => x)
-                .Do(_ => this.Log().Debug($"Rodney-Input1={Input1}"))
+                .Do(_ =>
+                {
+                    this.Log().Debug($"Rodney-Input1={Input1}");
+                })
                 .Select(_ => Unit.Default)
                 .InvokeCommand(AddNumbers);
         }
